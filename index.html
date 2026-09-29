@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidade — Organizador de Contracheques</title>
+  <meta name="description" content="Como o Organizador de Contracheques da BergeS7 trata os dados pessoais: processamento 100% local, sem coleta, armazenamento ou compartilhamento." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik9yZ2FuaXphZG9yIGRlIENvbnRyYWNoZXF1ZXMiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMyNTYzZWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMWUzYThhIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgcng9IjI4IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjI2IiB5PSIyMiIgd2lkdGg9IjU2IiBoZWlnaHQ9Ijg0IiByeD0iOSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjM2IiB5PSIzOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjMWUzYThhIi8+CiAgPHJlY3QgeD0iMzYiIHk9IjU0IiB3aWR0aD0iMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiMzYjgyZjYiLz4KICA8cmVjdCB4PSIzNiIgeT0iNzAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzkzYzVmZCIvPgogIDxyZWN0IHg9IjM2IiB5PSI4NiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjYmZkYmZlIi8+CiAgPHJlY3QgeD0iOTYiIHk9IjMwIiB3aWR0aD0iOCIgaGVpZ2h0PSI1MiIgcng9IjQiIGZpbGw9IiNmYmJmMjQiLz4KICA8cGF0aCBkPSJNODYgNzYgTDExNCA3NiBMMTAwIDEwMCBaIiBmaWxsPSIjZmJiZjI0IiBzdHJva2U9IiNmYmJmMjQiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" />
+  <style>
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --border: #e4e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-strong: #1e3a8a;
+  --primary-soft: #eff4ff;
+  --accent: #f59e0b;
+  --ok-bg: #ecfdf3;   --ok-fg: #067647;
+  --warn-bg: #fffaeb; --warn-fg: #b54708;
+  --err-bg: #fef3f2;  --err-fg: #b42318;
+  --info-bg: #eef4ff; --info-fg: #3538cd;
+  --shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 8px 24px rgba(15, 23, 42, .06);
+  --radius: 16px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --surface: #111a2e;
+    --surface-2: #0f172a;
+    --border: #1f2a44;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --primary: #3b82f6;
+    --primary-strong: #93c5fd;
+    --primary-soft: #16213b;
+    --ok-bg: #0d2a1f;   --ok-fg: #6ee7b7;
+    --warn-bg: #2d2110; --warn-fg: #fbbf24;
+    --err-bg: #2d1414;  --err-fg: #fca5a5;
+    --info-bg: #151f3d; --info-fg: #a5b4fc;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--primary); }
+
+/* ---------- Topo ---------- */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+.brand img { width: 40px; height: 40px; }
+.brand-name { font-weight: 800; font-size: 17px; line-height: 1.2; }
+.brand-sub { font-size: 12.5px; color: var(--muted); }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ok-fg);
+  background: var(--ok-bg);
+  border-radius: 999px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+/* ---------- Layout ---------- */
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+  flex: 1;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -.02em; line-height: 1.2; }
+h2 { margin: 28px 0 8px; font-size: 19px; letter-spacing: -.01em; }
+h2:first-child { margin-top: 0; }
+p { margin: 0 0 12px; }
+.muted { color: var(--muted); }
+.lead { color: var(--muted); font-size: 15.5px; max-width: 720px; }
+
+/* ---------- Passos ---------- */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.steps li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+.steps .n {
+  flex: none;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- Área de arquivo ---------- */
+.dropzone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 2px dashed var(--border);
+  border-radius: 14px;
+  background: var(--primary-soft);
+  padding: 22px;
+  transition: border-color .15s, background .15s;
+}
+.dropzone:hover, .dropzone:focus-within { border-color: var(--primary); }
+.dropzone input[type=file] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.dropzone svg { flex: none; width: 40px; height: 40px; color: var(--primary); }
+.dropzone strong { display: block; font-size: 15px; }
+.dropzone span { font-size: 13.5px; color: var(--muted); }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  transition: filter .15s, transform .05s;
+}
+button:hover:not(:disabled) { filter: brightness(1.08); }
+button:active:not(:disabled) { transform: translateY(1px); }
+button:focus-visible { outline: 3px solid var(--primary-soft); outline-offset: 2px; }
+button.secondary { background: #059669; }
+button.warning { background: #b54708; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+.status {
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-top: 16px;
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+.status.info  { background: var(--info-bg); color: var(--info-fg); }
+.status.ok    { background: var(--ok-bg);   color: var(--ok-fg); }
+.status.warn  { background: var(--warn-bg); color: var(--warn-fg); }
+.status.error { background: var(--err-bg);  color: var(--err-fg); }
+
+/* ---------- Resultado ---------- */
+#summary { font-weight: 700; font-size: 15px; }
+.table-wrap { overflow-x: auto; margin-top: 14px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+th, td {
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 10px;
+  vertical-align: top;
+}
+th {
+  background: var(--surface-2);
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+tbody tr:hover { background: var(--surface-2); }
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.badge.ok    { background: var(--ok-bg);   color: var(--ok-fg); }
+.badge.warn  { background: var(--warn-bg); color: var(--warn-fg); }
+.badge.error { background: var(--err-bg);  color: var(--err-fg); }
+
+.hidden { display: none !important; }
+code { background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 1px 5px; }
+
+/* ---------- Páginas de texto (políticas) ---------- */
+.doc { max-width: 780px; }
+.doc ul { padding-left: 20px; margin: 0 0 12px; }
+.doc li { margin-bottom: 6px; }
+.doc .updated { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.back { display: inline-block; margin-bottom: 16px; font-weight: 600; text-decoration: none; }
+
+/* ---------- Rodapé ---------- */
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.footer nav { display: flex; gap: 18px; }
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--primary); text-decoration: underline; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 720px) {
+  .steps { grid-template-columns: 1fr; }
+  .card { padding: 20px; }
+  h1 { font-size: 23px; }
+  .pill { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik9yZ2FuaXphZG9yIGRlIENvbnRyYWNoZXF1ZXMiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMyNTYzZWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMWUzYThhIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgcng9IjI4IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjI2IiB5PSIyMiIgd2lkdGg9IjU2IiBoZWlnaHQ9Ijg0IiByeD0iOSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjM2IiB5PSIzOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjMWUzYThhIi8+CiAgPHJlY3QgeD0iMzYiIHk9IjU0IiB3aWR0aD0iMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiMzYjgyZjYiLz4KICA8cmVjdCB4PSIzNiIgeT0iNzAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzkzYzVmZCIvPgogIDxyZWN0IHg9IjM2IiB5PSI4NiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjYmZkYmZlIi8+CiAgPHJlY3QgeD0iOTYiIHk9IjMwIiB3aWR0aD0iOCIgaGVpZ2h0PSI1MiIgcng9IjQiIGZpbGw9IiNmYmJmMjQiLz4KICA8cGF0aCBkPSJNODYgNzYgTDExNCA3NiBMMTAwIDEwMCBaIiBmaWxsPSIjZmJiZjI0IiBzdHJva2U9IiNmYmJmMjQiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="" />
+      <div>
+        <div class="brand-name">Organizador de Contracheques</div>
+        <div class="brand-sub">BergeS7</div>
+      </div>
+    </a>
+  </div>
+</header>
+
+<main>
+  <article class="card doc">
+    <h1>Política de Privacidade</h1>
+    <p class="updated">Última atualização: 29 de setembro de 2026</p>
+
+    <p>
+      Esta política explica como a extensão <strong>Organizador de Contracheques — BergeS7</strong>
+      trata os dados pessoais presentes nos arquivos processados, em conformidade com a
+      Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018).
+    </p>
+
+    <h2>1. Resumo</h2>
+    <ul>
+      <li>Todo o processamento acontece <strong>somente no seu computador</strong>, dentro do navegador.</li>
+      <li>Nenhum arquivo, nome, valor ou outro dado é <strong>enviado para a internet</strong> ou para servidores da BergeS7 ou de terceiros.</li>
+      <li>A extensão <strong>não armazena</strong> os arquivos nem os resultados depois que a aba é fechada.</li>
+      <li>Não há cookies, rastreamento, publicidade ou ferramentas de análise.</li>
+    </ul>
+
+    <h2>2. Controlador</h2>
+    <p>
+      O controlador dos dados é a <strong>BergeS7</strong>, que utiliza esta ferramenta internamente
+      para organizar os contracheques dos seus colaboradores.
+    </p>
+
+    <h2>3. Quais dados são tratados</h2>
+    <p>
+      Ao selecionar um PDF, a extensão lê o conteúdo das páginas para identificar cada funcionário.
+      Os contracheques podem conter dados pessoais como nome, código de matrícula, cargo,
+      salário, descontos e outras informações trabalhistas.
+    </p>
+
+    <h2>4. Finalidade e base legal</h2>
+    <p>
+      Os dados são tratados exclusivamente para reordenar as páginas do PDF em ordem alfabética
+      e conferir se todas as páginas foram incluídas. A base legal é o cumprimento de obrigação
+      legal e a execução do contrato de trabalho (art. 7º, incisos II e V, da LGPD), já que a
+      emissão de contracheques é uma obrigação do empregador.
+    </p>
+
+    <h2>5. Como os dados são processados</h2>
+    <ul>
+      <li>O arquivo é lido na memória do navegador por meio das bibliotecas PDF.js e pdf-lib, incluídas na própria extensão.</li>
+      <li>A extensão não solicita nenhuma permissão especial do navegador e não faz requisições de rede.</li>
+      <li>O PDF organizado é gerado localmente e salvo apenas quando você clica em “Baixar PDF”.</li>
+    </ul>
+
+    <h2>6. Armazenamento e retenção</h2>
+    <p>
+      Os dados ficam apenas na memória temporária da aba enquanto ela está aberta. Ao fechar ou
+      recarregar a aba, tudo é descartado. O arquivo baixado fica sob sua responsabilidade,
+      na pasta escolhida no seu computador.
+    </p>
+
+    <h2>7. Compartilhamento</h2>
+    <p>Nenhum dado é compartilhado, vendido ou transferido a terceiros.</p>
+
+    <h2>8. Segurança</h2>
+    <p>
+      Como não há transmissão nem armazenamento externo, o risco de vazamento pela ferramenta é
+      mínimo. Recomendamos guardar os PDFs gerados em local protegido e restrito às pessoas
+      autorizadas.
+    </p>
+
+    <h2>9. Direitos dos titulares</h2>
+    <p>
+      Os colaboradores podem exercer os direitos previstos no art. 18 da LGPD (acesso, correção,
+      eliminação, informação sobre compartilhamento, entre outros) entrando em contato com a
+      BergeS7 pelo canal indicado abaixo.
+    </p>
+
+    <h2>10. Contato</h2>
+    <p>
+      Dúvidas ou solicitações sobre esta política: <a href="mailto:oigresyt7@gmail.com"><strong>oigresyt7@gmail.com</strong></a>.
+    </p>
+
+    <h2>11. Alterações</h2>
+    <p>
+      Esta política pode ser atualizada se o funcionamento da extensão mudar. A data da última
+      atualização fica sempre no topo desta página.
+    </p>
+
+    <h2 id="cookies" style="font-size:24px;margin-top:40px">Política de Cookies</h2>
+    <p class="updated">Última atualização: 29 de setembro de 2026</p>
+
+    <h2 style="font-size:17px">C1. O que são cookies</h2>
+    <p>
+      Cookies são pequenos arquivos que sites e aplicativos gravam no navegador para lembrar
+      preferências, manter sessões ou acompanhar a navegação. Tecnologias parecidas incluem o
+      armazenamento local (localStorage), o IndexedDB e os pixels de rastreamento.
+    </p>
+
+    <h2 style="font-size:17px">C2. Esta extensão não usa cookies</h2>
+    <p>
+      O <strong>Organizador de Contracheques — BergeS7</strong> <strong>não utiliza cookies</strong>
+      nem qualquer tecnologia semelhante. Especificamente, a extensão:
+    </p>
+    <ul>
+      <li>não grava cookies no navegador;</li>
+      <li>não usa localStorage, sessionStorage, IndexedDB ou armazenamento da extensão;</li>
+      <li>não carrega scripts, fontes ou imagens de servidores externos;</li>
+      <li>não utiliza ferramentas de análise (como Google Analytics), publicidade ou pixels de rastreamento.</li>
+    </ul>
+
+    <h2 style="font-size:17px">C3. Por isso não há aviso de consentimento</h2>
+    <p>
+      Como nenhum cookie ou identificador é gravado, não é necessário pedir consentimento nem
+      exibir um banner de cookies. Se isso mudar no futuro, esta política será atualizada e o
+      consentimento será solicitado antes de qualquer gravação.
+    </p>
+
+    <h2 style="font-size:17px">C4. Cookies do próprio navegador</h2>
+    <p>
+      O Chrome ou o Edge podem manter cookies de outros sites que você visita. Eles não têm
+      relação com esta extensão e podem ser gerenciados nas configurações de privacidade do
+      navegador.
+    </p>
+
+    <h2 style="font-size:17px">C5. Contato</h2>
+    <p>
+      Dúvidas sobre esta política: <a href="mailto:oigresyt7@gmail.com"><strong>oigresyt7@gmail.com</strong></a>.
+    </p>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© BergeS7 · Organizador de Contracheques</span>
+    <nav>
+      <a href="#">Política de Privacidade</a>
+      <a href="#cookies">Política de Cookies</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
