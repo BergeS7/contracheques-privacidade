@@ -25,15 +25,15 @@ Organiza qualquer PDF com nomes em ordem alfabética, localmente, sem enviar nad
 7. Garante que todo o conteúdo original entra exatamente uma vez.
 8. Folhas inteiras são copiadas sem recortar, redimensionar ou redesenhar.
 
-## Bibliotecas necessárias
+## Bibliotecas incluídas
 
-Coloque estes arquivos dentro da pasta `libs/`:
+A pasta `libs/` já traz as bibliotecas de terceiros usadas pela extensão:
 
-- `pdf-lib.min.js` — versão 1.17.1
-- `pdf.min.js` — versão 3.11.174
-- `pdf.worker.min.js` — versão 3.11.174
+- `pdf-lib.min.js` — [pdf-lib](https://github.com/Hopding/pdf-lib) versão 1.17.1, licença MIT
+- `pdf.min.js` — [PDF.js](https://github.com/mozilla/pdf.js) versão 3.11.174, licença Apache 2.0
+- `pdf.worker.min.js` — [PDF.js](https://github.com/mozilla/pdf.js) versão 3.11.174, licença Apache 2.0
 
-Esses arquivos não foram incluídos neste pacote para evitar redistribuir dependências de terceiros.
+Os arquivos são redistribuídos sem alterações, conforme essas licenças.
 
 Estrutura final:
 
