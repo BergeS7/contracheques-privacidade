@@ -1,4 +1,4 @@
-# Organizador de Contracheques — BergeS7
+# Organizador de Contracheques — BergeS7 
 
 Extensão Chrome/Edge Manifest V3 para reorganizar PDFs de contracheques por nome de funcionário.
 
