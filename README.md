@@ -3,7 +3,7 @@
 Extensão Chrome/Edge Manifest V3 para reorganizar PDFs de contracheques por nome de funcionário.
 
 ## O que ela faz
-
+    
 Organiza qualquer PDF com nomes em ordem alfabética, localmente, sem enviar nada para a internet.
 
 1. Lê o texto de cada página com PDF.js.
