@@ -1,0 +1,4 @@
+# GitHub Pages publica só a política de privacidade (index.html).
+# O código da extensão fica no repositório, mas fora do site.
+exclude:
+  - extensao/

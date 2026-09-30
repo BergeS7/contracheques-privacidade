@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Organizador de Contracheques">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <rect x="26" y="22" width="56" height="84" rx="9" fill="#ffffff"/>
+  <rect x="36" y="38" width="36" height="8" rx="4" fill="#1e3a8a"/>
+  <rect x="36" y="54" width="30" height="8" rx="4" fill="#3b82f6"/>
+  <rect x="36" y="70" width="24" height="8" rx="4" fill="#93c5fd"/>
+  <rect x="36" y="86" width="18" height="8" rx="4" fill="#bfdbfe"/>
+  <rect x="96" y="30" width="8" height="52" rx="4" fill="#fbbf24"/>
+  <path d="M86 76 L114 76 L100 100 Z" fill="#fbbf24" stroke="#fbbf24" stroke-width="4" stroke-linejoin="round"/>
+</svg>

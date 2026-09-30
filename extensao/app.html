@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Organizador de Contracheques — BergeS7</title>
+  <meta name="description" content="Organize PDFs de contracheques em ordem alfabética por funcionário, com conferência de páginas. Processamento 100% local, sem envio de dados." />
+  <meta name="application-name" content="Organizador de Contracheques" />
+  <meta name="author" content="BergeS7" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="icon" type="image/svg+xml" href="icons/logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="app.html">
+      <img src="icons/logo.svg" alt="" />
+      <div>
+        <div class="brand-name">Organizador de Contracheques</div>
+        <div class="brand-sub">BergeS7</div>
+      </div>
+    </a>
+    <span class="pill" title="Nenhum dado sai do seu computador">🔒 Processamento 100% local</span>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <h1>Organize PDFs em ordem alfabética</h1>
+    <p class="lead">
+      Selecione qualquer PDF com nomes (contracheques, recibos, fichas). O conteúdo é reordenado
+      pelo nome encontrado em cada página, sem alterar o que está escrito. Folhas com duas pessoas
+      são separadas. Nada é enviado para a internet.
+    </p>
+
+    <ol class="steps">
+      <li><span class="n">1</span><span>Escolha ou arraste o PDF.</span></li>
+      <li><span class="n">2</span><span>Clique em Organizar: o PDF sai de A a Z.</span></li>
+      <li><span class="n">3</span><span>Confira a tabela e baixe o PDF.</span></li>
+    </ol>
+
+    <label class="dropzone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+        <path d="M14 3v5h5" />
+        <path d="M12 17v-6" />
+        <path d="m9 14 3-3 3 3" />
+      </svg>
+      <div>
+        <strong>Clique para escolher ou arraste o PDF aqui</strong>
+        <span>Somente arquivos .pdf</span>
+      </div>
+      <input id="pdfFile" type="file" accept="application/pdf,.pdf" />
+    </label>
+
+    <div class="actions">
+      <button id="processBtn">Organizar em ordem alfabética</button>
+      <button id="downloadBtn" class="secondary hidden">⬇ Baixar PDF</button>
+    </div>
+
+    <div id="status" class="status info" role="status" aria-live="polite">Selecione um arquivo PDF.</div>
+  </section>
+
+  <section id="resultCard" class="card hidden">
+    <div id="summary"></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Páginas originais</th>
+            <th>Identificado por</th>
+          </tr>
+        </thead>
+        <tbody id="resultBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© BergeS7 · Organizador de Contracheques</span>
+    <nav>
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="cookies.html">Política de Cookies</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="libs/pdf.min.js"></script>
+<script src="libs/pdf-lib.min.js"></script>
+<script src="pdf-halves.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
