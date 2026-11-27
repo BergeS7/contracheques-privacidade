@@ -1,93 +1,73 @@
-# Organizador de Contracheques — BergeS7 
+# TudoPDF — by BergeS7
 
-Extensão Chrome/Edge Manifest V3 para reorganizar PDFs de contracheques por nome de funcionário.
+**Tudo em PDF. Tudo em um só lugar.**
 
-## O que ela faz
-    
-Organiza qualquer PDF com nomes em ordem alfabética, localmente, sem enviar nada para a internet.
+Plataforma de ferramentas PDF com **processamento 100% local**, privacidade e funcionamento offline.
+Evolução da extensão *Organizador de Contracheques — BergeS7* (v1.2.0, Chrome Web Store), que continua
+disponível dentro do TudoPDF com melhorias.
 
-1. Lê o texto de cada página com PDF.js.
-2. Encontra o nome de cada página (ou de cada metade), nesta ordem:
-   - `000578 - NOME COMPLETO` (código de 6 dígitos + nome);
-   - campos como `Nome:`, `Funcionário:`, `Colaborador:`;
-   - se nada for encontrado, a primeira linha de texto da página.
-3. Um "nome" presente na maioria das páginas é tratado como cabeçalho (empresa, departamento) e
-   ignorado. Candidatos com outro ` - ` no nome (ex.: `000034 - ZD - CONSORCIO`) também.
-4. **Folhas com duas pessoas** (um contracheque em cima, outro embaixo): cada contracheque é separado e
-   ordenado; eles são remontados dois por folha. O texto que não entra é **apagado do arquivo** (não
-   fica escondido), e o conteúdo continua vetorial e selecionável.
-   **Proteção do corte:** a folha só é separada quando o cabeçalho se repete duas vezes (pelo menos 3
-   textos iguais à mesma distância) e há uma faixa em branco de 10 pt ou mais exatamente onde começa
-   o segundo contracheque. O corte vai no meio dessa faixa. Sem isso, a folha fica inteira. Ao juntar
-   duas metades de folhas diferentes, só ficam na mesma folha se os textos não se sobrepuserem.
-5. Folhas com a mesma pessoa em cima e embaixo (duas vias) continuam inteiras.
-6. Ordena de A a Z, desconsiderando acentos. Páginas sem texto (escaneadas) vão para o final.
-7. Garante que todo o conteúdo original entra exatamente uma vez.
-8. Folhas inteiras são copiadas sem recortar, redimensionar ou redesenhar.
+- Extensão Chrome (Manifest V3): o ícone abre o app completo em uma nova aba.
+- Aplicação web instalável (PWA) a partir do mesmo código.
+- Nenhum documento sai do dispositivo. Sem cadastro, sem analytics, sem anúncios.
 
-## Bibliotecas incluídas
+## Ferramentas disponíveis (v2.0.0)
 
-A pasta `libs/` já traz as bibliotecas de terceiros usadas pela extensão:
+| Categoria | Ferramentas |
+|---|---|
+| Automações | Organizar contracheques (A-Z, separação de folhas com duas pessoas, revisão manual, ZIP por funcionário, relatório), Buscar em vários PDFs, Identificar duplicados |
+| Organizar | Juntar, Dividir, Organizar páginas (miniaturas com arrastar e soltar), Extrair, Excluir, Girar, Inverter, Intercalar, Pares/ímpares, Duplicar, Páginas em branco, Alterar tamanho, Ordenar documentos A-Z |
+| Converter | JPG/PNG/WEBP → PDF, PDF → JPG/PNG/WEBP, PDF → TXT, PDF → Markdown, TXT → PDF |
+| Editar | Marca-d'água, Numerar páginas, Cabeçalho e rodapé |
+| Segurança | Diagnóstico e metadados (integridade, criptografia, assinaturas, scripts), Remover metadados, Localizar dados pessoais (CPF/CNPJ com dígito verificador, e-mail, telefone, datas, valores) |
 
-- `pdf-lib.min.js` — [pdf-lib](https://github.com/Hopding/pdf-lib) versão 1.17.1, licença MIT
-- `pdf.min.js` — [PDF.js](https://github.com/mozilla/pdf.js) versão 3.11.174, licença Apache 2.0
-- `pdf.worker.min.js` — [PDF.js](https://github.com/mozilla/pdf.js) versão 3.11.174, licença Apache 2.0
+O que ainda não existe aparece no app como **“Em breve”** e está em [docs/IMPLEMENTATION_STATUS.md](docs/IMPLEMENTATION_STATUS.md).
 
-Os arquivos são redistribuídos sem alterações, conforme essas licenças.
+## Desenvolvimento
 
-Estrutura final:
+Requisitos: Node.js 22.13+ (testado com Node 26).
 
-```text
-contracheques-ordem-alfabetica/
-├── manifest.json
-├── background.js
-├── app.html
-├── app.js
-├── pdf-halves.js
-├── styles.css
-├── privacidade.html
-├── cookies.html
-├── icons/
-│   ├── logo.svg
-│   └── icon-16/32/48/128.png
-└── libs/
-    ├── pdf-lib.min.js
-    ├── pdf.min.js
-    └── pdf.worker.min.js
+```bash
+npm install
+npm run dev            # http://localhost:5173
+npm test               # testes unitários e de integração (Vitest)
+npm run lint
+npm run typecheck
+npm run build          # dist/web e dist/extension
+npm run zip:extension  # dist/tudopdf-extensao-<versão>.zip (com verificações MV3)
+npm run check          # lint + typecheck + testes + build
 ```
 
-## Instalar no Chrome
+### Carregar a extensão localmente
 
-1. Abra `chrome://extensions`.
-2. Ative `Modo do desenvolvedor`.
-3. Clique em `Carregar sem compactação`.
-4. Escolha a pasta da extensão.
+1. `npm run build:extension`
+2. Abra `chrome://extensions`, ative o **Modo do desenvolvedor**.
+3. **Carregar sem compactação** → selecione `dist/extension`.
 
-## Instalar no Edge
+### Publicar a versão web
 
-1. Abra `edge://extensions`.
-2. Ative `Modo de desenvolvedor`.
-3. Clique em `Carregar descompactado`.
-4. Escolha a pasta da extensão.
+`npm run build:web` gera `dist/web`, um site estático (rotas por hash, sem configuração de servidor).
+Funciona em Vercel, Cloudflare Pages ou GitHub Pages. O service worker só é registrado em HTTPS/localhost.
 
-## Como a tabela mostra cada nome
+## Estrutura
 
-- **Código e nome** / **Campo de nome**: nome encontrado com segurança.
-- **1ª linha da página**: nenhum nome encontrado; a página foi ordenada pela primeira linha de texto.
-- **Sem texto · no final**: página sem texto (imagem); fica no final, na ordem original.
-- Nas páginas originais, `(cima)` e `(baixo)` indicam contracheques separados de folhas com duas pessoas.
+```
+app/            entrada do Vite (index.html, main.ts, modelo do service worker)
+src/core/       motor de processamento, sem interface (pdf, payroll, conversion, recognition, validation)
+src/workers/    Web Worker que executa as operações do pdf-lib
+src/services/   PDF.js no navegador, jobs (worker), downloads/ZIP, imagens
+src/features/   registro de ferramentas e telas (organize, convert, edit, security, automations)
+src/components/ interface compartilhada (ui, layout, upload, pdf-viewer)
+extension/      manifest.json e background.js da extensão MV3
+extensao/       código da v1.2.0 publicada (referência; usado nos testes de paridade)
+tests/          testes com documentos sintéticos
+docs/           arquitetura, roadmap, status, testes, privacidade, licenças
+index.html      política de privacidade publicada no GitHub Pages
+```
 
-O PDF é sempre gerado; não há bloqueios nem confirmação manual.
+Mais detalhes: [ARCHITECTURE](docs/ARCHITECTURE.md) · [ROADMAP](docs/ROADMAP.md) · [TESTING](docs/TESTING.md) ·
+[SECURITY](SECURITY.md) · [PRIVACY](docs/PRIVACY.md) · [CHANGELOG](CHANGELOG.md) · [CONTRIBUTING](CONTRIBUTING.md) ·
+[Licenças de terceiros](docs/THIRD_PARTY_LICENSES.md)
 
-## Observação importante
+## Licença
 
-A identificação usa o texto do PDF. PDFs escaneados (só imagem) não têm texto e ficam no final.
-Para um novo padrão de nome, ajuste `extractCandidates()` em `app.js`.
-
-## Teste recomendado
-
-Validado em 30/09/2026 com:
-
-- `CONTRA VENDEDORES 09-2026.pdf`: 41 páginas, 39 funcionários, duas vias por folha → 41 páginas, inteiras.
-- `Demonstrativo(s) de Pagamento.pdf`: 48 folhas com duas pessoas por folha (96 contracheques,
-  90 funcionários) → 48 páginas em ordem alfabética, sem texto a mais nem a menos.
+Código proprietário da BergeS7 (todos os direitos reservados). Bibliotecas de terceiros mantêm suas licenças.
