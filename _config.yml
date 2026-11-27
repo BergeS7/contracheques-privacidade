@@ -1,4 +1,19 @@
 # GitHub Pages publica só a política de privacidade (index.html).
-# O código da extensão fica no repositório, mas fora do site.
+# O código-fonte (extensão e app TudoPDF) fica no repositório, mas fora do site.
 exclude:
   - extensao/
+  - extension/
+  - app/
+  - src/
+  - public/
+  - tests/
+  - scripts/
+  - docs/
+  - node_modules/
+  - dist/
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - vite.config.ts
+  - eslint.config.js
+  - "*.md"

@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+/* O root do Vite é app/; as classes ficam em src/. */
+@source "..";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tokens da identidade TudoPDF. Vermelho como cor principal, neutros quentes no restante. */
+:root {
+  --bg: #f6f6f7;
+  --surface: #ffffff;
+  --surface-2: #f9f9fa;
+  --surface-3: #f1f1f3;
+  --line: #e4e4e7;
+  --line-strong: #d4d4d8;
+  --ink: #18181b;
+  --ink-2: #3f3f46;
+  --muted: #71717a;
+  --brand: #d62828;
+  --brand-strong: #b11f1f;
+  --brand-soft: #fdeeee;
+  --brand-ink: #ffffff;
+  --ok: #15803d;
+  --ok-soft: #ecfdf3;
+  --warn: #b45309;
+  --warn-soft: #fffbeb;
+  --err: #b91c1c;
+  --err-soft: #fef2f2;
+  --info: #1d4ed8;
+  --info-soft: #eff6ff;
+  --shadow-sm: 0 1px 2px rgb(24 24 27 / 0.05);
+  --shadow-md: 0 1px 2px rgb(24 24 27 / 0.04), 0 6px 20px rgb(24 24 27 / 0.06);
+}
+
+.dark {
+  --bg: #0e0e10;
+  --surface: #161618;
+  --surface-2: #1b1b1e;
+  --surface-3: #222226;
+  --line: #2a2a2e;
+  --line-strong: #38383d;
+  --ink: #ededf0;
+  --ink-2: #c8c8cd;
+  --muted: #9a9aa3;
+  --brand: #ef4444;
+  --brand-strong: #f87171;
+  --brand-soft: #2a1515;
+  --brand-ink: #ffffff;
+  --ok: #4ade80;
+  --ok-soft: #0f2418;
+  --warn: #fbbf24;
+  --warn-soft: #2a2010;
+  --err: #f87171;
+  --err-soft: #2a1414;
+  --info: #93c5fd;
+  --info-soft: #131d33;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-err: var(--err);
+  --color-err-soft: var(--err-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand) 22%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes tp-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.tp-fade-in { animation: tp-fade-in 180ms ease-out both; }
+
+@keyframes tp-indeterminate {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
+.tp-indeterminate { animation: tp-indeterminate 1.2s ease-in-out infinite; }
